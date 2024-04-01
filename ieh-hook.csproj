@@ -111,6 +111,7 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Hooks\HttpClient.cs"/>
+        <Compile Include="Hooks\Nitro.cs"/>
         <Compile Include="Hooks\SteamIAP.cs"/>
         <Compile Include="Main.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
