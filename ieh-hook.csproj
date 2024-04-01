@@ -110,6 +110,7 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <Compile Include="Hooks\Gold.cs"/>
         <Compile Include="Hooks\HttpClient.cs"/>
         <Compile Include="Hooks\Nitro.cs"/>
         <Compile Include="Hooks\SteamIAP.cs"/>
