@@ -1,5 +1,4 @@
 ﻿using HarmonyLib;
-using MelonLoader;
 
 namespace IEHHook.Hooks
 {
@@ -43,7 +42,6 @@ namespace IEHHook.Hooks
     {
         public static bool Prefix(AlchemyController __instance, ref float deltaTime)
         {
-            MelonLogger.Msg(deltaTime);
             deltaTime = 10000;
             return true;
         }
