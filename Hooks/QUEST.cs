@@ -52,10 +52,7 @@ namespace IEHHook.Hooks
     {
         public static void Postfix(QUEST __instance, ref bool __result)
         {
-            if (__instance.kind == QuestKind.General)
-            {
-                __result = true;
-            }
+            if (!__instance.isCleared && __instance.kind == QuestKind.General) __result = true;
         }
     }
 }
