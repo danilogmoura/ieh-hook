@@ -1,5 +1,4 @@
 ﻿using HarmonyLib;
-using MelonLoader;
 
 namespace IEHHook.Hooks
 {
@@ -28,7 +27,8 @@ namespace IEHHook.Hooks
     [HarmonyPatch(typeof(EquipmentGlobalInformation), "RequiredProficiency", typeof(HeroKind), typeof(long))]
     public class EquipmentGlobalInformation_RequiredProficiency
     {
-        public static void Postfix(EquipmentGlobalInformation __instance, HeroKind heroKind, long level, ref double __result)
+        public static void Postfix(EquipmentGlobalInformation __instance, HeroKind heroKind, long level,
+            ref double __result)
         {
             __result = 0;
         }
