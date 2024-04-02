@@ -15,7 +15,7 @@ namespace IEHHook.Hooks
     //         return Math.Floor((1.0 + (double)this.level.value * this.areaCtrl.townMaterialGainPerDifficultyMultiplier.Value()) * (1.0 + this.areaCtrl.townMaterialGainBonus.Value() + this.areaCtrl.townMaterialGainBonusClass[(int)heroKind].Value()) * GameController.game.townCtrl.townMaterialGainMultiplier[(int)heroKind].Value());
     //     }
     // }
-    
+
     [HarmonyPatch(typeof(AREA), "TownMaterialRewardNum", typeof(HeroKind))]
     public class AREA_TownMaterialRewardNum
     {
