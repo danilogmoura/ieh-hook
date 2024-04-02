@@ -111,15 +111,20 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="Hooks\AlchemyController.cs"/>
+        <Compile Include="Hooks\AREA.cs"/>
+        <Compile Include="Hooks\BUILDING.cs"/>
+        <Compile Include="Hooks\DUNGEON.cs"/>
         <Compile Include="Hooks\EquipmentGlobalInformation.cs"/>
         <Compile Include="Hooks\Gold.cs"/>
         <Compile Include="Hooks\HttpClient.cs"/>
         <Compile Include="Hooks\IEH1PlayerBonusUI.cs"/>
         <Compile Include="Hooks\MONSTER_BATTLE.cs"/>
         <Compile Include="Hooks\Nitro.cs"/>
+        <Compile Include="Hooks\NitroController.cs"/>
         <Compile Include="Hooks\QUEST.cs"/>
         <Compile Include="Hooks\QuestController.cs"/>
         <Compile Include="Hooks\SteamIAP.cs"/>
+        <Compile Include="Hooks\TownController.cs"/>
         <Compile Include="Main.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
     </ItemGroup>
