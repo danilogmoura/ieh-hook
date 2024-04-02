@@ -131,7 +131,7 @@ namespace IEHHook.Hooks
             __result = 1;
         }
     }
-    
+
     // using System;
     // using System.Collections.Generic;
     // using UnityEngine;
@@ -157,5 +157,4 @@ namespace IEHHook.Hooks
             __result *= 100;
         }
     }
-    
 }
