@@ -123,6 +123,7 @@
         <Compile Include="Hooks\NitroController.cs"/>
         <Compile Include="Hooks\QUEST.cs"/>
         <Compile Include="Hooks\QuestController.cs"/>
+        <Compile Include="Hooks\SKILL.cs"/>
         <Compile Include="Hooks\SteamIAP.cs"/>
         <Compile Include="Hooks\TownController.cs"/>
         <Compile Include="Main.cs"/>
