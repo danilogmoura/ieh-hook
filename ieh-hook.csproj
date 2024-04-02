@@ -121,6 +121,7 @@
         <Compile Include="Hooks\MONSTER_BATTLE.cs"/>
         <Compile Include="Hooks\Nitro.cs"/>
         <Compile Include="Hooks\NitroController.cs"/>
+        <Compile Include="Hooks\PotionController.cs" />
         <Compile Include="Hooks\QUEST.cs"/>
         <Compile Include="Hooks\QuestController.cs"/>
         <Compile Include="Hooks\SKILL.cs"/>
