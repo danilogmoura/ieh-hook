@@ -19,7 +19,7 @@ namespace IEHHook.Hooks
     //         }
     //     }
     // }
-    
+
     [HarmonyPatch(typeof(MONSTER_BATTLE), "get_hp")]
     public static class MONSTER_BATTLE_hp
     {
@@ -46,7 +46,7 @@ namespace IEHHook.Hooks
     //         }
     //     }
     // }
-    
+
     [HarmonyPatch(typeof(MONSTER_BATTLE), "get_mp")]
     public static class MONSTER_BATTLE_mp
     {
@@ -73,7 +73,7 @@ namespace IEHHook.Hooks
     //         }
     //     }
     // }
-    
+
     [HarmonyPatch(typeof(MONSTER_BATTLE), "get_def")]
     public static class MONSTER_BATTLE_def
     {
@@ -100,7 +100,7 @@ namespace IEHHook.Hooks
     //         }
     //     }
     // }
-    
+
     [HarmonyPatch(typeof(MONSTER_BATTLE), "get_mdef")]
     public static class MONSTER_BATTLE_mdef
     {
@@ -127,7 +127,7 @@ namespace IEHHook.Hooks
     //         }
     //     }
     // }
-    
+
     [HarmonyPatch(typeof(MONSTER_BATTLE), "get_debuffResistance")]
     public static class MONSTER_BATTLE_debuffResistance
     {
@@ -154,7 +154,7 @@ namespace IEHHook.Hooks
     //         }
     //     }
     // }
-    
+
     [HarmonyPatch(typeof(MONSTER_BATTLE), "get_gainFactor")]
     public static class MONSTER_BATTLE_gainFactor
     {
