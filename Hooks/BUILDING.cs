@@ -15,7 +15,7 @@ namespace IEHHook.Hooks
     //         return Math.Ceiling(3.0 + Math.Pow(200.0, Math.Log(1.0 + level, 6.0)) * Math.Pow(3.0, level / 100.0) * 0.5 * Math.Max(1.0, Math.Pow(2.0, (level - 20.0) / 20.0)) * Math.Max(1.0, Math.Pow(4.0, (level - 60.0) / 20.0)) * Math.Max(0.25, 1.0 - this.townCtrl.levelCostReduction.Value()));
     //     }
     // }
-    
+
     [HarmonyPatch(typeof(BUILDING), "PrimaryCost", typeof(double))]
     public class BUILDING_PrimaryCost
     {
