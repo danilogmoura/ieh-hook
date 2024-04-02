@@ -42,7 +42,7 @@ namespace IEHHook.Hooks
     {
         public static bool Prefix(AlchemyController __instance, ref float deltaTime)
         {
-            deltaTime = 10000;
+            deltaTime = 1_000_000;
             return true;
         }
     }
