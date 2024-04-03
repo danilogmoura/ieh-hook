@@ -25,8 +25,8 @@ namespace IEHHook.Hooks
     // 	}
     // }
 
-    [HarmonyPatch(typeof(PotionController), "Start")]
-    public static class PotionController_Start
+    [HarmonyPatch(typeof(PotionController), MethodType.Constructor)]
+    public static class PotionController_Constructor
     {
         public static void Postfix(PotionController __instance)
         {
