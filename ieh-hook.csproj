@@ -112,6 +112,7 @@
     <ItemGroup>
         <Compile Include="Hooks\AlchemyController.cs"/>
         <Compile Include="Hooks\AREA.cs"/>
+        <Compile Include="Hooks\Battle_Octobaddie.cs" />
         <Compile Include="Hooks\BUILDING.cs"/>
         <Compile Include="Hooks\DUNGEON.cs"/>
         <Compile Include="Hooks\EquipmentGlobalInformation.cs"/>
