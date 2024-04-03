@@ -109,11 +109,13 @@ namespace IEHHook.Hooks
     // 		this.openButton.interactable = true;
     // 	}
     // }
+
     [HarmonyPatch(typeof(IEH1PlayerBonusUI), "CheckBonus")]
-    public static class IEH1PlayerBonusUI_CheckBonus_Prefix
+    public static class IEH1PlayerBonusUI_CheckBonus
     {
         private static bool Prefix(IEH1PlayerBonusUI __instance)
         {
+            Traverse.Create(__instance).Field("isTrying").SetValue(false);
             Traverse.Create(__instance).Field("isChecked").SetValue(true);
             Traverse.Create(__instance).Field("isPurchasedDLC").SetValue(true);
             Main.main.S.isReceivedIEH1DLCIEH2SupportPack = false;
