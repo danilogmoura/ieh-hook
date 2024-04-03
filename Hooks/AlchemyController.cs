@@ -14,6 +14,7 @@ namespace IEHHook.Hooks
     //         return !this.mysteriousWaterExpandedCapNum.IsMaxed() && this.mysteriousWater.IsMaxed();
     //     }
     // }
+
     [HarmonyPatch(typeof(AlchemyController), "CanExpandMysteriousWater")]
     public static class AlchemyController_CanExpandMysteriousWater
     {
@@ -37,6 +38,7 @@ namespace IEHHook.Hooks
     //         this.catalystCtrl.Update(deltaTime);
     //     }
     // }
+
     [HarmonyPatch(typeof(AlchemyController), "Update", typeof(float))]
     public static class AlchemyController_ProgressMysteriousWater
     {
