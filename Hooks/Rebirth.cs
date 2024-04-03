@@ -72,7 +72,7 @@ namespace IEHHook.Hooks
     // 	}
     // }
 
-    [HarmonyPatch(typeof(Rebirth), "ResetSave")]
+    // [HarmonyPatch(typeof(Rebirth), "ResetSave")]
     public class Rebirth_ResetSave
     {
         private static IEnumerable<CodeInstruction> Transpiler(IEnumerable<CodeInstruction> instructions)
