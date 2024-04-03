@@ -28,8 +28,8 @@ namespace IEHHook.Hooks
         public static void Postfix(NitroController __instance)
         {
             __instance.maxNitroSpeed =
-                new Multiplier(new MultiplierInfo(MultiplierKind.Base, MultiplierType.Add, () => 20.0));
-            __instance.speed = new NitroSpeed(() => __instance.maxNitroSpeed.Value(), () => 20.0);
+                new Multiplier(new MultiplierInfo(MultiplierKind.Base, MultiplierType.Add, () => 100.0));
+            __instance.speed = new NitroSpeed(() => __instance.maxNitroSpeed.Value(), () => 100.0);
         }
     }
 }
