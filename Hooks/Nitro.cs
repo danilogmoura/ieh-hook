@@ -27,11 +27,14 @@ namespace IEHHook.Hooks
     //             }
     //         }
     //     }
+    
     [HarmonyPatch(typeof(Nitro), "Decrease", typeof(double), typeof(bool))]
     public static class Nitro_Decrease
     {
         public static bool Prefix(Nitro __instance, double decrement, bool isPreventCheckMaxAndMin)
         {
+            Main.main.S.nitroConsumed += decrement;
+
             if (__instance.value != __instance.maxValue())
                 __instance.value = __instance.maxValue();
             return false;
