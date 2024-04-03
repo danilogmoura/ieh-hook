@@ -35,14 +35,14 @@ namespace IEHHook.Hooks
     //             Main.main.S.totalGold += increment;
     //         }
     //     }
+
     [HarmonyPatch(typeof(Gold), "Increase", typeof(double), typeof(HeroKind))]
     public static class Gold_Increase
     {
-        public static bool Prefix(Gold __instance, double increment, HeroKind heroKind)
+        public static bool Prefix(Gold __instance, ref double increment, HeroKind heroKind)
         {
-            if (__instance.value != __instance.maxValue())
-                __instance.value = __instance.maxValue();
-            return false;
+            increment = __instance.maxValue();
+            return true;
         }
     }
 }
