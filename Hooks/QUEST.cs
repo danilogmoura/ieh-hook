@@ -47,6 +47,7 @@ namespace IEHHook.Hooks
     //         return (this.type != QuestType.Defeat || this.DefeatTargetMonsterDefeatedNum() >= this.defeatRequredDefeatNum()) && (this.type != QuestType.Capture || this.CaptureTargetMonsterCapturedNum() >= this.captureRequiredNum()) && (this.type != QuestType.AreaComplete || this.AreaCompletedNum() >= this.areaRequredCompletedNum());
     //     }
     // }
+
     [HarmonyPatch(typeof(QUEST), "CanClaim")]
     public static class QUEST_CanClaim
     {
@@ -54,7 +55,9 @@ namespace IEHHook.Hooks
         {
             if (!__instance.isAccepted)
                 __result = false;
-            else if (!__instance.isCleared && __instance.kind == QuestKind.General)
+
+            else if (!__instance.isCleared &&
+                     (__instance.kind == QuestKind.General || __instance.kind == QuestKind.Title))
                 __result = true;
         }
     }
