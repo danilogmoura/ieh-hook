@@ -112,11 +112,14 @@
     <ItemGroup>
         <Compile Include="Hooks\AlchemyController.cs"/>
         <Compile Include="Hooks\AREA.cs"/>
+        <Compile Include="Hooks\BATTLE.cs" />
         <Compile Include="Hooks\Battle_Octobaddie.cs" />
         <Compile Include="Hooks\BUILDING.cs"/>
         <Compile Include="Hooks\DUNGEON.cs"/>
         <Compile Include="Hooks\EquipmentGlobalInformation.cs"/>
+        <Compile Include="Hooks\Expedition.cs" />
         <Compile Include="Hooks\Gold.cs"/>
+        <Compile Include="Hooks\GuildLevel.cs" />
         <Compile Include="Hooks\HERO_BATTLE.cs" />
         <Compile Include="Hooks\HttpClient.cs"/>
         <Compile Include="Hooks\IEH1PlayerBonusUI.cs"/>
