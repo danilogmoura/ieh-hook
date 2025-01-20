@@ -36,9 +36,6 @@
         <PostBuildEvent>move IEHHook.dll "E:\Games\Steam\steamapps\common\Incremental Epic Hero 2\Mods"</PostBuildEvent>
     </PropertyGroup>
     <ItemGroup>
-        <Reference Include="0Harmony">
-            <HintPath>E:\Games\Steam\steamapps\common\Incremental Epic Hero 2\MelonLoader\0Harmony.dll</HintPath>
-        </Reference>
         <Reference Include="0Harmony, Version=2.3.3.0, Culture=neutral, processorArchitecture=MSIL">
             <HintPath>packages\Lib.Harmony.2.3.3\lib\net472\0Harmony.dll</HintPath>
         </Reference>
