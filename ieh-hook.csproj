@@ -114,7 +114,6 @@
         <Compile Include="Hooks\BUILDING.cs"/>
         <Compile Include="Hooks\Catalyst.cs" />
         <Compile Include="Hooks\DUNGEON.cs"/>
-        <Compile Include="Hooks\Essence.cs" />
         <Compile Include="Hooks\Expedition.cs" />
         <Compile Include="Hooks\Gold.cs"/>
         <Compile Include="Hooks\GuildLevel.cs" />
