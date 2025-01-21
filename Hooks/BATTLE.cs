@@ -7,62 +7,50 @@ namespace IEHHook.Hooks
     // using System.Runtime.CompilerServices;
     // using UnityEngine;
     //
-    // // Token: 0x02000022 RID: 34
+    // // Token: 0x02000024 RID: 36
     // public partial class BATTLE : RANGE
     // {
-    //     // Token: 0x0600010D RID: 269 RVA: 0x00016D24 File Offset: 0x00014F24
-    //     public void Update(float deltaTime)
+    //     // Token: 0x060000F7 RID: 247 RVA: 0x00016150 File Offset: 0x00014350
+    //     public virtual void Activate()
     //     {
-    //         if (!this.isAlive)
+    //         this.isAlive = true;
+    //         this.move.Initialize();
+    //         if (this.isHero && this.battleCtrl.isSuperDungeon && this.battleCtrl.superDungeonCtrl.currentSD != null && this.battleCtrl.superDungeonCtrl.currentSD.modifierCtrl.HPModifier() < 1.0)
     //         {
-    //             return;
+    //             this.currentHp.ChangeValue(this.hp * this.battleCtrl.superDungeonCtrl.currentSD.modifierCtrl.HPModifier(), true);
     //         }
-    //         if (!this.isHero || !this.battleCtrl.isSuperDungeon || !this.battleCtrl.superDungeonCtrl.IsDodge() || GameController.game.sdgCtrl.unlockFlexibleDodge.IsUnlocked())
+    //         else
     //         {
-    //             this.UpdateMove(deltaTime);
-    //             this.UpdateSkillCooltime(deltaTime);
-    //             this.UpdateTriggerSkill();
+    //             this.currentHp.ChangeValue(this.hp, true);
     //         }
-    //         this.UpdateCheckDefeated();
-    //         this.Regenerate(deltaTime);
+    //         if (!this.isHero && this.battleCtrl.isSuperDungeon && this.battleCtrl.superDungeonCtrl.currentSD != null && this.battleCtrl.superDungeonCtrl.currentSD.modifierCtrl.unlockMobCastFull.IsUnlocked())
+    //         {
+    //             this.currentMp.ChangeValue(this.mp, true);
+    //         }
+    //         else
+    //         {
+    //             this.currentMp.ChangeValue(0.0, true);
+    //         }
+    //         this.ResetCooltime();
+    //         this.CureDebuff();
     //     }
     // }
 
-    // [HarmonyPatch(typeof(BATTLE), "Update")]
-    public static class BATTLE_Update
+    [HarmonyPatch(typeof(BATTLE), "Activate")]
+    public static class BATTLE_Activate
     {
-        private static void Prefix(BATTLE __instance, ref float deltaTime)
+        private static void Postfix(BATTLE __instance)
         {
-            deltaTime *= 1_000;
-        }
-    }
-
-
-    // using System;
-    // using System.Collections.Generic;
-    // using System.Runtime.CompilerServices;
-    // using UnityEngine;
-    //
-    // // Token: 0x02000022 RID: 34
-    // public partial class BATTLE : RANGE
-    // {
-    //     // Token: 0x060000FE RID: 254 RVA: 0x00016A69 File Offset: 0x00014C69
-    //     private void UpdateCheckDefeated()
-    //     {
-    //         if (this.isAlive && this.currentHp.value <= 0.0)
-    //         {
-    //             this.DeadAction();
-    //         }
-    //     }
-    // }
-
-    [HarmonyPatch(typeof(BATTLE), "UpdateCheckDefeated")]
-    public static class BATTLE_UpdateCheckDefeated
-    {
-        private static void Prefix(BATTLE __instance)
-        {
-            if (!__instance.isHero && __instance.isAlive)
-                __instance.DeadAction();
+            switch (__instance.isHero)
+            {
+                case false:
+                    __instance.currentHp.ChangeValue(10.0, true);
+                    break;
+                case true:
+                    __instance.currentHp.ChangeValue(double.MaxValue, true);
+                    __instance.currentMp.ChangeValue(double.MaxValue, true);
+                    break;
+            }
         }
     }
 }
