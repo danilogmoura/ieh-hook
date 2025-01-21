@@ -27,7 +27,7 @@ namespace IEHHook.Hooks
     //             }
     //         }
     //     }
-    
+
     [HarmonyPatch(typeof(Nitro), "Decrease", typeof(double), typeof(bool))]
     public static class Nitro_Decrease
     {
@@ -37,6 +37,7 @@ namespace IEHHook.Hooks
 
             if (__instance.value != __instance.maxValue())
                 __instance.value = __instance.maxValue();
+
             return false;
         }
     }
