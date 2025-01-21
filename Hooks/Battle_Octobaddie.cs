@@ -96,37 +96,7 @@ namespace IEHHook.Hooks
     {
         public static void Postfix(Battle_Octobaddie __instance)
         {
-            __instance.currentAttackColor = AttackColor.Green;
-            Traverse.Create(__instance).Field("isDestroyedProtect").SetValue(true);
-        }
-    }
-
-    // using System;
-    // using System.Collections.Generic;
-    // using UnityEngine;
-    //
-    // // Token: 0x020001D0 RID: 464
-    // public partial class Battle_Octobaddie : CHALLENGE_BATTLE
-    // {
-    //     // Token: 0x06001257 RID: 4695 RVA: 0x00071D1C File Offset: 0x0006FF1C
-    //     public override void Activate()
-    //     {
-    //         base.Activate();
-    //         this.currentAttackColor = AttackColor.Blue;
-    //         this.targetPosition = Parameter.HeroInitPosition(1f);
-    //         this.isFirstReverseGravity = false;
-    //         this.attackedCount = 0.0;
-    //         this.isDestroyedProtect = false;
-    //         this.regenProtectCount = 0;
-    //     }
-    // }
-
-    [HarmonyPatch(typeof(Battle_Octobaddie), "Activate")]
-    public static class Battle_Octobaddie_Activate
-    {
-        public static void Postfix(Battle_Octobaddie __instance)
-        {
-            __instance.currentAttackColor = AttackColor.Green;
+            __instance.currentAttackColor = AttackColor.Yellow;
             Traverse.Create(__instance).Field("isDestroyedProtect").SetValue(true);
         }
     }
