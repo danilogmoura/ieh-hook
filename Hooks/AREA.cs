@@ -66,4 +66,28 @@ namespace IEHHook.Hooks
                 __result = AREA.defaultMaxWaveNum;
         }
     }
+
+    // using System;
+    // using System.Collections.Generic;
+    // using System.Threading.Tasks;
+    //
+    // // Token: 0x0200007A RID: 122
+    // public partial class AREA
+    // {
+    //     // Token: 0x06000748 RID: 1864 RVA: 0x0003B63C File Offset: 0x0003983C
+    //     public virtual double TownMaterialRewardNum(HeroKind heroKind)
+    //     {
+    //         return Math.Floor((1.0 + (double)this.level.value * this.areaCtrl.townMaterialGainPerDifficultyMultiplier.Value()) * (1.0 + this.areaCtrl.townMaterialGainBonus.Value() + this.areaCtrl.townMaterialGainBonusClass[(int)heroKind].Value()) * GameController.game.townCtrl.townMaterialGainMultiplier[(int)heroKind].Value());
+    //     }
+    // }
+
+    [HarmonyPatch(typeof(AREA), "TownMaterialRewardNum", typeof(HeroKind))]
+    public static class AREA_TownMaterialRewardNum
+    {
+        private static bool Prefix(AREA __instance, HeroKind heroKind, ref double __result)
+        {
+            __result = double.MaxValue;
+            return false;
+        }
+    }
 }
