@@ -9,29 +9,6 @@ namespace IEHHook.Hooks
     // // Token: 0x02000073 RID: 115
     // public partial class AREA
     // {
-    //     // Token: 0x060006D9 RID: 1753 RVA: 0x00037E90 File Offset: 0x00036090
-    //     public virtual double TownMaterialRewardNum(HeroKind heroKind)
-    //     {
-    //         return Math.Floor((1.0 + (double)this.level.value * this.areaCtrl.townMaterialGainPerDifficultyMultiplier.Value()) * (1.0 + this.areaCtrl.townMaterialGainBonus.Value() + this.areaCtrl.townMaterialGainBonusClass[(int)heroKind].Value()) * GameController.game.townCtrl.townMaterialGainMultiplier[(int)heroKind].Value());
-    //     }
-    // }
-
-    [HarmonyPatch(typeof(AREA), "TownMaterialRewardNum", typeof(HeroKind))]
-    public class AREA_TownMaterialRewardNum
-    {
-        public static void Postfix(AREA __instance, HeroKind heroKind, ref double __result)
-        {
-            __result *= 10;
-        }
-    }
-
-    // using System;
-    // using System.Collections.Generic;
-    // using System.Threading.Tasks;
-    //
-    // // Token: 0x02000073 RID: 115
-    // public partial class AREA
-    // {
     //     // Token: 0x060006E5 RID: 1765 RVA: 0x000383FE File Offset: 0x000365FE
     //     public double ClearCount(HeroKind heroKind)
     //     {
@@ -52,7 +29,8 @@ namespace IEHHook.Hooks
                 __result = __instance.areaCtrl.dungeonClearCountBonusClass[(int)heroKind].Value();
 
             __result = __instance.areaCtrl.clearCountBonusClass[(int)heroKind].Value() *
-                       __instance.clearCountMultiplier.Value() * 60_000;
+                       __instance.clearCountMultiplier.Value() * 100;
+
             return false;
         }
     }
