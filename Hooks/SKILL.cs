@@ -95,7 +95,34 @@ namespace IEHHook.Hooks
     {
         public static void Postfix(SKILL __instance, long level, ref double __result)
         {
-            __result = 1.0;
+            __result = 0.0;
+        }
+    }
+
+    // using System;
+    // using System.Collections.Generic;
+    // using UnityEngine;
+    //
+    // // Token: 0x02000591 RID: 1425
+    // public partial class SKILL
+    // {
+    //     // Token: 0x06002E0B RID: 11787 RVA: 0x0010DFAA File Offset: 0x0010C1AA
+    //     public virtual double ConsumeMpBase(HeroKind heroKind)
+    //     {
+    //         if (this.type == SkillType.Buff)
+    //         {
+    //             return 0.0;
+    //         }
+    //         return this.initMpConsume + this.incrementMpConsume * (double)this.Level(heroKind);
+    //     }
+    // }
+
+    [HarmonyPatch(typeof(SKILL), "ConsumeMpBase", typeof(HeroKind))]
+    public class SKILL_ConsumeMpBase
+    {
+        public static void Postfix(SKILL __instance, HeroKind heroKind, ref double __result)
+        {
+            __result = 0.0;
         }
     }
 }
