@@ -30,12 +30,14 @@ namespace IEHHook.Hooks
         public static void Postfix(QuestController __instance, HeroKind heroKind)
         {
             var quests = Traverse.Create(__instance).Field("generalQuests").GetValue<QUEST[][]>();
-            if (GameController.game.battleCtrls[(int)heroKind].isActiveBattle)
-                for (var i = 0; i < quests[(int)heroKind].Length; i++)
-                {
-                    quests[(int)heroKind][i].isFavorite = true;
-                    quests[(int)heroKind][i].Claim();
-                }
+
+            if (!GameController.game.battleCtrls[(int)heroKind].isActiveBattle) return;
+
+            for (var i = 0; i < quests[(int)heroKind].Length; i++)
+            {
+                quests[(int)heroKind][i].isFavorite = true;
+                quests[(int)heroKind][i].Claim();
+            }
         }
     }
 }
