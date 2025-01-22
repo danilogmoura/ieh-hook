@@ -28,8 +28,7 @@ namespace IEHHook.Hooks
             if (__instance.isDungeon)
                 __result = __instance.areaCtrl.dungeonClearCountBonusClass[(int)heroKind].Value();
 
-            __result = __instance.areaCtrl.clearCountBonusClass[(int)heroKind].Value() *
-                       __instance.clearCountMultiplier.Value() * 100;
+            __result = 10_000;
 
             return false;
         }
