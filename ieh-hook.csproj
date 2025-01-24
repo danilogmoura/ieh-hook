@@ -110,6 +110,7 @@
         <Compile Include="Hooks\AlchemyController.cs"/>
         <Compile Include="Hooks\AREA.cs"/>
         <Compile Include="Hooks\BATTLE.cs" />
+        <Compile Include="Hooks\BATTLE_CONTROLLER.cs" />
         <Compile Include="Hooks\Battle_Octobaddie.cs" />
         <Compile Include="Hooks\BUILDING.cs"/>
         <Compile Include="Hooks\Catalyst.cs" />
@@ -120,15 +121,22 @@
         <Compile Include="Hooks\HeroStats.cs" />
         <Compile Include="Hooks\HttpClient.cs"/>
         <Compile Include="Hooks\MaterialGenerator.cs" />
+        <Compile Include="Hooks\MonsterGlobalInformation.cs" />
+        <Compile Include="Hooks\MonsterPet.cs" />
+        <Compile Include="Hooks\MONSTER_BATTLE.cs" />
         <Compile Include="Hooks\Nitro.cs"/>
         <Compile Include="Hooks\NitroController.cs"/>
         <Compile Include="Hooks\QUEST.cs"/>
         <Compile Include="Hooks\QuestController.cs"/>
         <Compile Include="Hooks\Rebirth.cs" />
+        <Compile Include="Hooks\ResourceController.cs" />
+        <Compile Include="Hooks\SDGem.cs" />
         <Compile Include="Hooks\SKILL.cs"/>
         <Compile Include="Hooks\SteamIAP.cs"/>
+        <Compile Include="Hooks\SuperDungeonController.cs" />
         <Compile Include="Hooks\TownController.cs"/>
         <Compile Include="Hooks\TownMaterial.cs" />
+        <Compile Include="Hooks\UpgradeController.cs" />
         <Compile Include="Main.cs"/>
         <Compile Include="Properties\AssemblyInfo.cs"/>
     </ItemGroup>
