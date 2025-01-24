@@ -1,4 +1,5 @@
-﻿using HarmonyLib;
+﻿using System;
+using HarmonyLib;
 
 namespace IEHHook.Hooks
 {
@@ -86,6 +87,34 @@ namespace IEHHook.Hooks
         private static bool Prefix(AREA __instance, HeroKind heroKind, ref double __result)
         {
             __result = double.MaxValue;
+            return false;
+        }
+    }
+
+    // using System;
+    // using System.Collections.Generic;
+    // using System.Threading.Tasks;
+    //
+    // // Token: 0x0200007A RID: 122
+    // public partial class AREA
+    // {
+    //     // Token: 0x17000136 RID: 310
+    //     // (get) Token: 0x06000744 RID: 1860 RVA: 0x0003B605 File Offset: 0x00039805
+    //     public Func<double> rewardExp
+    //     {
+    //         get
+    //         {
+    //             return new Func<double>(this.RewardExp);
+    //         }
+    //     }
+    // }
+
+    [HarmonyPatch(typeof(AREA), "rewardExp", MethodType.Getter)]
+    public static class AREA_rewardExp
+    {
+        private static bool Prefix(AREA __instance, ref Func<double> __result)
+        {
+            __result = () => double.MaxValue;
             return false;
         }
     }
