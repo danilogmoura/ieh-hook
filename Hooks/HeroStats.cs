@@ -42,7 +42,7 @@ namespace IEHHook.Hooks
     [HarmonyPatch(typeof(HeroStats), "AbilityStats", typeof(BasicStatsKind))]
     public static class HeroStats_AbilityStats
     {
-        private static bool Prefix(HeroStats __originalMethod, BasicStatsKind kind, ref double __result)
+        private static bool Prefix(HeroStats __instance, BasicStatsKind kind, ref double __result)
         {
             __result = double.MaxValue;
             return false;
