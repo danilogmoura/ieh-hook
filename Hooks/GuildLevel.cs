@@ -34,7 +34,7 @@ namespace IEHHook.Hooks
     {
         public static void Prefix(GuildLevel __instance, ref long increment)
         {
-            increment *= 2;
+            increment *= 10_000L;
         }
     }
 }
