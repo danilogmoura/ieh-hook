@@ -22,7 +22,7 @@ namespace IEHHook.Hooks
     {
         public static bool Prefix(TownController __instance, ref double deltaTime)
         {
-            deltaTime = 1_000_000;
+            deltaTime = 1e200;
             return true;
         }
     }
